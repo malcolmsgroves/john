@@ -6,3 +6,5 @@ An application for locating public bathrooms.
 *  Rails backend api-only framework for persistence, run on heroku
 *  Authentication with okta, account made
 
+## Server
+The application is supported by a rails-api backend hosted on heroku at https://secure-lowlands-37343.herokuapp.com/
