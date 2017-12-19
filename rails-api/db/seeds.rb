@@ -7,5 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 50.times do |index|
   Bathroom.create!(name: Faker::Address.street_name,
-                   lnglat: "POINT(#{-75 + rand * 10} #{40 + rand * 10})")
+                   lng: -75 + rand * 10,
+                   lat: 40 + rand * 10)
 end

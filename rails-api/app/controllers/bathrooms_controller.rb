@@ -1,9 +1,9 @@
 class BathroomsController < ApplicationController
 
-  def get_nearby
+  def nearby
     location = bathroom_params
-    order_string = "lnglat <-> st_makepoint(#{location[:lng]},#{location[:lat]})"
-    bathrooms = Bathroom.order(order_string).limit(5)
+    bathrooms = Bathroom.nearby(location[:lat], location[:lng])
+    #bathrooms = Bathroom.select("lat", "lng", order_string + "AS distance").order("distance").all
     render :json => bathrooms.as_json
   end
 

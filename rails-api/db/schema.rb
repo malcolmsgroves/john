@@ -14,14 +14,13 @@ ActiveRecord::Schema.define(version: 20171214122921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "postgis"
 
   create_table "bathrooms", force: :cascade do |t|
     t.string "name"
-    t.geometry "lnglat", limit: {:srid=>0, :type=>"st_point"}
+    t.decimal "lat"
+    t.decimal "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lnglat"], name: "index_bathrooms_on_lnglat", using: :gist
   end
 
 end
